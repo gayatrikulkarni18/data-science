@@ -1,0 +1,41 @@
+import sys
+import os
+import pandas as pd
+################################################################
+pd.options.mode.chained_assignment = None
+################################################################
+################################################################
+if sys.platform == 'linux':
+ Base=os.path.expanduser('~') + '/VKHCG'
+else:
+ Base='C:/VKHCG'
+print('################################')
+print('Working Base:',Base,'using',sys.platform)
+print('################################') 
+print('################################')
+print('Working Base:',Base,'using',sys.platform)
+print('################################')
+################################################################
+sInputFileName1='01-Retrieve/01-EDS/01-R/Retrieve_Country_Code.csv'
+sInputFileName2='01-Retrieve/01-EDS/02-Python/Retrieve_Router_Location.csv'
+################################################################
+sOutputFileName='Assess-Network-Routing-Company.csv'
+Company='01-Vermeulen'
+################################################################
+################################################################
+### Import Country Data
+################################################################
+sFileName=Base + '/' + Company + '/' + sInputFileName1
+print('################################')
+print('Loading:',sFileName)
+print('################################')
+CountryData=pd.read_csv(sFileName,header=0,low_memory=False,
+encoding="latin-1")
+print('Loaded Country:',CountryData.columns.values)
+print('################################')
+################################################################
+## Assess Country Data
+################################################################
+print('################################')
+print('Changed:',CountryData.columns.values)
+print('Gayatri Kulkarni -53004230002')
